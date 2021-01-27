@@ -22,9 +22,9 @@ Le cahier des charges comprend :
 ## Technologies
 ***
 Technologies utilisées
-* [Technologie name](): HTML5
-* [Technologie name](): CSS3
-* [Library name](): JavaScript
+* [HTML5](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/HTML5)
+* [CSS3](https://developer.mozilla.org/fr/docs/Web/CSS)
+* [JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 ## Installation
 ***
 Pour visualiser le site internet, lancez simplement le fichier index.html ou simulez un serveur via Visual Studio (Live Server) ou via toutes autres déclinaisons.
