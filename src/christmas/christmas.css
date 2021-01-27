@@ -1,0 +1,204 @@
+/*#########################################################################
+Auteur : Jeremy BROYON#####################################################
+Nom : Hearthstone API######################################################
+Date limite : 07/12/20#####################################################
+Cahier des charges :#######################################################
+  - page d'accueil#########################################################
+  - formulaire de contact via une API######################################
+  - pages fixes générées par l'API#########################################
+  - un tableau et une galerie d'images#####################################
+  - responsivité, sémantique, syntaxe, fonctions supp######################
+#########################################################################*/
+/*#########################################################################*/
+html, body
+{
+  height: 100%;
+}
+
+body
+{
+  background: #000;
+  cursor: url(../index/cursor/hearthstone-cursor.png) 10 2, auto;
+  overflow: hidden;
+}
+body:active
+{
+  cursor: url(../index/cursor/hearthstone-click.png) 10 2, auto;
+}
+body:after
+{
+  background-color: #000;
+  background-image: url(christmas/christmas_animated.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  content: "";
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+  opacity: 0.8;
+  position: absolute;
+  will-change: transform;
+  z-index: -1;
+}
+
+.card
+{
+  left: 0;
+  top: 0;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+  width: 250px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.card:active
+{
+  cursor: url(../index/cursor/hearthstone-grab.png) 10 2, auto;
+}
+
+.card-image
+{
+  display: block;
+  pointer-events: none;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 100%;
+  will-change: transform;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+/*#####################################################################*/
+/*tableau contenant les images de navigations du menu*/
+.table-image
+{
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1%;
+}
+.image-zoom
+{
+    transition: 0.4s;
+    width: 10%;
+}
+.image-zoom:hover 
+{
+    transform: scale(1.05);
+    cursor: url(../index/cursor/hearthstone-cursor.png) 10 2, auto;
+}
+audio
+{
+    display: none;
+}
+/*#####################################################################*/
+/*responsive (gestion de la hauteur de l'index)*/
+@media (max-height: 540px)
+{
+    .image-zoom
+    {
+        width: 17%;
+    }
+     body
+    {
+        background-image: url(background/background_hs.png);
+        background-repeat: repeat;
+        overflow: visible;
+    }
+    .table-image
+    {
+        overflow: visible;
+        width: 100%;
+    }
+}
+@media (max-height: 450px)
+{
+    .image-zoom
+    {
+        width: 16%;
+    }
+}
+@media (max-height: 430px)
+{
+    .image-zoom
+    {
+        width: 14%;
+    }
+}
+@media (max-height: 380px)
+{
+    .image-zoom
+    {
+        width: 13%;
+    }
+}
+@media (max-height: 350px)
+{
+    .image-zoom
+    {
+        width: 12%;
+    }
+}
+@media (max-height: 330px)
+{
+    .image-zoom
+    {
+        width: 10%;
+    }
+}
+/*#####################################################################*/
+/*responsive (gestion de la largeur de l'index)*/
+@media (max-width: 1400px)
+{
+    body
+    {
+        background-image: url(background/background_hs.png);
+        background-repeat: repeat;
+        overflow: visible;
+    }
+    .table-image
+    {
+        overflow: visible;
+        width: 100%;
+    }
+    .image-zoom
+    {
+        width: 25%;
+    }
+}
+@media (max-width: 550px)
+{
+    .image-zoom
+    {
+        width: 32%;
+    }
+}
+@media (max-width: 400px)
+{
+    .image-zoom
+    {
+        width: 48%;
+    }
+}
+@media (max-width: 300px)
+{
+    .image-zoom
+    {
+        width: 100%;
+    }
+}

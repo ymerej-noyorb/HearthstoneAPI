@@ -1,0 +1,431 @@
+/*#########################################################################
+Auteur : Jeremy BROYON#####################################################
+Nom : Hearthstone API######################################################
+Date limite : 07/12/20#####################################################
+Cahier des charges :#######################################################
+  - page d'accueil#########################################################
+  - formulaire de contact via une API######################################
+  - pages fixes générées par l'API#########################################
+  - un tableau et une galerie d'images#####################################
+  - responsivité, sémantique, syntaxe, fonctions supp######################
+#########################################################################*/
+/*#########################################################################*/
+body
+{
+    background: black;
+    /*curseur de hearthstone et background déroulant*/
+    cursor: url(../index/cursor/hearthstone-cursor.png) 10 2, auto;
+    background-image: url(../index/background/background_hs.png);
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+body:active
+{
+    /*curseur de hearthstone*/
+    cursor: url(../index/cursor/hearthstone-click.png) 10 2, auto;
+}
+/*#####################################################################*/
+/*tableau contenant les images de navigations*/
+.table-image, .table-type
+{
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 2%;
+}
+/*#####################################################################*/
+/*tableau contenant les images de tri*/
+.table-icon
+{
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    width: 40%;
+    overflow: hidden;
+    margin-top: 2%;
+}
+.table-gallery
+{
+    text-align: center;
+    margin-top: 5%;
+    width: 100%;
+}
+/*#####################################################################*/
+/*images de tri*/
+.size_gallery
+{
+    width: 10%;
+}
+.icon-zoom
+{
+    transition: 0.4s;
+    width: 8%;
+}
+.icon-type, .image-zoom
+{
+    transition: 0.4s;
+    width: 10%;
+}
+.except-class
+{
+    width: 11%;
+}
+#race
+{
+    width: 100%;
+}
+/*#####################################################################*/
+/*tableau contenant le résultat du tri*/
+.table-cards
+{
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+    border-collapse:collapse;
+    margin: auto;
+    width: 100%;
+    padding: 10%;
+    margin-top: 4%;
+}
+tr td
+{
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+/*#####################################################################*/
+/*dimension des images dans l'affichage du résultat du tri*/
+.image, .expansion, .type, .race, .health
+{
+    width: 100%;
+}
+.mana
+{
+    width: 80%;
+}
+.attack
+{
+    width: 65%;
+}
+ .durability
+{
+    width: 70%;
+}
+.faction
+{
+    width: 50%;
+}
+.class
+{
+    width: 60%;
+}
+.rarity
+{
+    width: 30%;
+}
+/*zoom sur l'image au survol de la souris*/
+.image:hover, .faction:hover, .expansion:hover, .type:hover, .race:hover, .class:hover,
+.rarity:hover, .mana:hover, .attack:hover, .health:hover, .durability:hover, .size_gallery:hover,
+.icon-type:hover, .icon-zoom:hover, .image-zoom:hover 
+{
+    transform: scale(1.08);
+    cursor: url(../index/cursor/hearthstone-cursor.png) 10 2, auto;
+}
+/*#####################################################################*/
+/*barre de recherche d'une carte saisie au clavier*/
+.search
+{
+    margin: 0 auto;
+    text-align: center;
+    width: 20%;
+    margin-top: 2%;
+    display: inline-flex;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.searchTerm
+{
+    width: 100%;
+    border: 3px solid grey;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+    color: white;
+    background: grey;
+    font-weight: bold;
+}
+.searchTerm:focus
+{
+    color: white;
+}
+.searchButton
+{
+    margin-top: 1%;
+    width: 40px;
+    height: 36px;
+    border: 3px solid green;
+    background: green;
+    text-align: center;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+/*#####################################################################*/
+/*barre de progression*/
+#progress_bar
+{
+    visibility: hidden;
+    width: 100%;
+    background-color: grey;
+    margin-top: 2%;
+}
+  
+#bar
+{
+    width: 1%;
+    height: 10px;
+    background-color: green;
+}
+/*#####################################################################*/
+/*formulaire de contact*/
+input[type=text], select, textarea
+{
+    width: 100%;
+    padding: 12px; 
+    border: 3px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background: grey;
+    color: white;
+}
+input[type=submit]
+{
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+input[type=submit]:hover
+{
+    background-color: rgb(1, 102, 1);
+}
+.container
+{
+    border-radius: 5px;
+    background-color: rgb(71, 71, 71);
+    padding: 20px;
+    margin-top: 5%;
+    display: inline-flex;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+audio
+{
+    display: none;
+}
+/*#####################################################################*/
+/*responsive (gestion de la hauteur de toutes les pages sauf index)*/
+@media (max-height: 630px)
+{
+     body
+    {
+        background-image: url(background/background_hs.png);
+        background-repeat: repeat;
+        overflow: visible;
+    }
+    .table-image, .table-icon, .table-gallery
+    {
+        overflow: visible;
+        width: 100%;
+    }
+    .icon-zoom
+    {
+        width: 5%;
+    }
+    .image-zoom, .icon-type, .cardFaction, .rwdIcon, .size_gallery
+    {
+        width: 17%;
+    }
+    .container, .search
+    {
+        margin-left: 35%;
+        margin-right: 35%;
+        width: 30%;
+    }
+}
+@media (max-height: 550px)
+{
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 16%;
+    }
+}
+@media (max-height: 470px)
+{
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 14%;
+    }
+}
+@media (max-height: 380px)
+{
+    .icon-zoom
+    {
+        width: 4%;
+    }
+    .rwdIcon
+    {
+        width: 11%;
+    }
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 13%;
+    }
+}
+@media (max-height: 350px)
+{
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 12%;
+    }
+}
+@media (max-height: 330px)
+{
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 10%;
+    }
+}
+/*#####################################################################*/
+/*responsive (gestion de la largeur de toutes les pages sauf index)*/
+@media (max-width: 1400px)
+{
+    body
+    {
+        background-image: url(background/background_hs.png);
+        background-repeat: repeat;
+        overflow: visible;
+    }
+    .table-image, .table-icon, .table-type, .table-gallery
+    {
+        overflow: visible;
+        width: 100%;
+    }
+    .icon-zoom
+    {
+        width: 8%;
+    }
+    .rwdIcon
+    {
+        width: 20%;
+    }
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 25%;
+    }
+    .container, .search
+    {
+        margin-left: 25%;
+        margin-right: 25%;
+        width: 50%;
+    }
+    .table-cards thead
+    {
+        display: none;
+    }
+    .table-cards th
+    {
+        visibility: hidden;
+    }
+    .table-cards tr
+    {
+        display: block;
+        margin-bottom: 40px;
+    }
+    .table-cards td
+    {
+        display: block;
+        text-align: center;
+    }
+    .table-cards td:before
+    {
+        content: attr(data-label);
+        float: left;
+        text-align: center;
+        font-weight: bold;
+    }
+    .race, .health, .mana, .attack, .durability, .class, .rarity
+    {
+        width: 10%;
+    }
+    .faction, .image, .expansion, .type
+    {
+        width: 20%;
+    }
+}
+@media (max-width: 750px)
+{
+    .description
+    {
+        width: 20%;
+    }
+}
+@media (max-width: 550px)
+{
+    .table-cards td
+    {
+        text-align: left;
+    }
+    .icon-zoom
+    {
+        width: 12%;
+    }
+    .rwdIcon
+    {
+        width: 30%;
+    }
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 32%;
+    }
+}
+@media (max-width: 400px)
+{
+    .icon-zoom
+    {
+        width: 22%;
+    }
+    .rwdIcon
+    {
+        width: 40%;
+    }
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 48%;
+    }
+}
+@media (max-width: 300px)
+{
+    .icon-zoom
+    {
+        width: 35%;
+    }
+    .rwdIcon
+    {
+        width: 80%;
+    }
+    .image-zoom, .icon-type, .cardFaction, .size_gallery
+    {
+        width: 100%;
+    }
+}

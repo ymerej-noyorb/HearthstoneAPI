@@ -1,0 +1,82 @@
+<!--#########################################################################
+Auteur : Jeremy BROYON#####################################################
+Nom : Hearthstone API######################################################
+Date limite : 07/12/20#####################################################
+Cahier des charges :#######################################################
+  - page d'accueil#########################################################
+  - formulaire de contact via une API######################################
+  - pages fixes générées par l'API#########################################
+  - un tableau et une galerie d'images#####################################
+  - responsivité, sémantique, syntaxe, fonctions supp######################
+#########################################################################-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../index/pages.css">
+    <script type="text/javascript" src="../index/pages.js"></script>
+    <link rel="icon" href="../index/hearthstone_api.ico" />
+    <meta charset="utf-8">
+    <title>Hearthstone API - Trier par type</title>
+</head>
+
+<body>
+    <!--#####################################################################################################-->
+    <!--tableau contenant les images de navigations-->
+    <table class="table-image">
+        <tr>
+            <td>
+                <a href="../rarity/rarity.html"><img src="../index/navbar/by_quality_hs.png" class="image-zoom"></a>
+                <a href="../class/class.html"><img src="../index/navbar/by_class_hs.png" class="image-zoom"></a>
+                <a href="../race/race.html"><img src="../index/navbar/by_race_hs.png" class="image-zoom"></a>
+                <a href="type.html"><img src="../index/navbar/by_type_hs.png" class="image-zoom"></a>
+                <a href="../index.html"><img src="../index/navbar/index_hs.png" class="image-zoom"></a>
+                <a href="../faction/faction.html"><img src="../index/navbar/by_faction_hs.png" class="image-zoom"></a>
+                <a href="../name/name.html"><img src="../index/navbar/by_name_hs.png" class="image-zoom"></a>
+                <a href="../expansion/extension.html"><img src="../index/navbar/by_extension_hs.png" class="image-zoom"></a>
+                <a href="../back/back.html"><img src="../index/navbar/by_back_hs.png" class="image-zoom"></a>
+            </td>
+        </tr>
+        <!--lignes contenant les informations des tris-->
+        <tr>
+            <td>
+                <img src="../index/info/info_type.png" class="image-zoom">
+                <img src="../index/navbar/hearthstoneAPI_info.png" class="image-zoom">
+                <img src="../index/info/info_time.png" class="image-zoom">
+                <a href="../contact/contact.html"><img src="../index/navbar/hearthstone_contact.png" title="Formulaire de contact" class="image-zoom"></a>
+            </td>
+        </tr>
+    </table>
+    <!--#####################################################################################################-->
+    <!--tableau contenant les images de tri-->
+    <table class="table-type">
+        <tr>
+            <td>
+                <img onclick="move(), getCardType(this.id)" id="minion" src="types/minion.png" title="Type: Serviteur" class="icon-type">
+                <img onclick="move(), getCardType(this.id)" id="spell" src="types/spell.png" title="Type: Sort" class="icon-type">
+                <img onclick="move(), getCardType(this.id)" id="weapon" src="types/weapon.png" title="Type: Arme" class="icon-type">
+                <img onclick="move(), getCardType(this.id)" id="hero" src="types/hero.png" title="Type: Héro" class="icon-type">
+                <img onclick="move(), getCardType(this.id)" id="hero power" src="types/hero power.png" title="Type: Pouvoir héroïque" class="icon-type">
+            </td>
+        </tr>
+    </table>
+    <!--#####################################################################################################-->
+    <!--barre de progression-->
+    <div id="progress_bar">
+        <div id="bar"></div>
+    </div>
+    <!--#####################################################################################################-->
+    <!--audio qui confirme l'exécution de la requête-->
+    <audio controls="controls" id='hearthstone_audio'
+    src="../index/hearthstone-travail-termine.ogg"></audio>  
+    <!--#####################################################################################################-->
+    <!--tableau contenant le résultat du tri-->
+    <table class="table-cards" id="table-split">
+        <tbody id="list_cards">
+            
+        </tbody>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!--#########################################################################
+Auteur : Jeremy BROYON#####################################################
+Nom : Hearthstone API######################################################
+Date limite : 07/12/20#####################################################
+Cahier des charges :#######################################################
+  - page d'accueil#########################################################
+  - formulaire de contact via une API######################################
+  - pages fixes générées par l'API#########################################
+  - un tableau et une galerie d'images#####################################
+  - responsivité, sémantique, syntaxe, fonctions supp######################
+#########################################################################-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../index/pages.css">
+    <script type="text/javascript" src="../index/pages.js"></script>
+    <link rel="icon" href="../index/hearthstone_api.ico" />
+    <meta charset="utf-8">
+    <title>Hearthstone API - Trier par extension</title>
+</head>
+
+<body>
+    <!--#####################################################################################################-->
+    <!--tableau contenant les images de navigations-->
+    <table class="table-image">
+        <tr>
+            <td>
+                <a href="../rarity/rarity.html"><img src="../index/navbar/by_quality_hs.png" class="image-zoom"></a>
+                <a href="../class/class.html"><img src="../index/navbar/by_class_hs.png" class="image-zoom"></a>
+                <a href="../race/race.html"><img src="../index/navbar/by_race_hs.png" class="image-zoom"></a>
+                <a href="../type/type.html"><img src="../index/navbar/by_type_hs.png" class="image-zoom"></a>
+                <a href="../index.html"><img src="../index/navbar/index_hs.png" class="image-zoom"></a>
+                <a href="../faction/faction.html"><img src="../index/navbar/by_faction_hs.png" class="image-zoom"></a>
+                <a href="../name/name.html"><img src="../index/navbar/by_name_hs.png" class="image-zoom"></a>
+                <a href="extension.html"><img src="../index/navbar/by_extension_hs.png" class="image-zoom"></a>
+                <a href="../back/back.html"><img src="../index/navbar/by_back_hs.png" class="image-zoom"></a>
+            </td>
+        </tr>
+        <!--lignes contenant les informations des tris-->
+        <tr>
+            <td>
+                <img src="../index/info/expansion_info.png" class="image-zoom">
+                <img src="../index/navbar/hearthstoneAPI_info.png" class="image-zoom">
+                <img src="../index/info/info_time.png" class="image-zoom">
+                <a href="../contact/contact.html"><img src="../index/navbar/hearthstone_contact.png" title="Formulaire de contact" class="image-zoom"></a>
+            </td>
+        </tr>
+    </table>
+    <!--#####################################################################################################-->
+    <!--tableau contenant les images de tri-->
+    <table class="table-type">
+        <tr>
+            <td>
+                <img onclick="move(), getCardExtension(this.id)" id="rise of shadows" src="expansions/rise of shadows.png" title="Extension: L'éveil des ombres" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="saviors of uldum" src="expansions/saviors of uldum.png" title="Extension: Les aventuriers d'Uldum" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="descent of dragons" src="expansions/descent of dragons.png" title="Extension: L'envol des dragons" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="galakrond's awakening" src="expansions/galakrond's awakening.png" title="Extension: Le réveil de Galakrond" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="ashes of outland" src="expansions/ashes of outland.png" title="Extension: Les cendres de l'outreterre" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="scholomance academy" src="expansions/scholomance academy.png" title="Extension: L'académie Scholomance" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="madness at the darkmoon faire" src="expansions/madness at the darkmoon faire.png" title="Extension: Folle journée à Sombrelune" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="naxxramas" src="expansions/naxxramas.png" title="Extension: La malédiction de Naxxramas" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="goblins vs gnomes" src="expansions/goblins vs gnomes.png" title="Extension: Gobelins et gnomes" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="blackrock mountain" src="expansions/blackrock mountain.png" title="Extension: Mont Rochenoire" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="the grand tournament" src="expansions/the grand tournament.png" title="Extension: Le grand tournoi" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="the league of explorers" src="expansions/the league of explorers.png" title="Extension: La ligue des explorateurs" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="whispers of the old gods" src="expansions/whispers of the old gods.png" title="Extension: Murmures des dieux anciens" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="one night in karazhan" src="expansions/one night in karazhan.png" title="Extension: Une nuit à Karazhan" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="mean streets of gadgetzan" src="expansions/mean streets of gadgetzan.png" title="Extension: Main basse sur Gadgetzan" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="journey to un'goro" src="expansions/journey to un'goro.png" title="Extension: Voyage au centre d'Un'goro" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="knights of the frozen throne" src="expansions/knights of the frozen throne.png" title="Extension: Les chevaliers du trône de glace" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="kobolds & catacombs" src="expansions/kobolds & catacombs.png" title="Extension: Kobols et catacombes" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="the witchwood" src="expansions/the witchwood.png" title="Extension: Le bois maudit" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="the boomsday project" src="expansions/the boomsday project.png" title="Extension: Projet Armageboum" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="rastakhan's rumble" src="expansions/rastakhan's rumble.png" title="Extension: Les jeux de Rastakhan" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="wild event" src="expansions/classic.png" title="Extension: Classique" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="credits" src="expansions/credits.png" title="Extension: Crédits" class="icon-type"><br>
+                <img onclick="move(), getCardExtension(this.id)" id="battlegrounds" src="expansions/battlegrounds.png" title="Champs de bataille" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="tavern brawl" src="expansions/tavern brawl.png" title="Extension: Taverne" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="hall of fame" src="expansions/hall of fame.png" title="Extension: Hall of fame" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="basic" src="expansions/basic.png" title="Extension: Basique" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="hero skins" src="expansions/hero skins.png" title="Extension: Skin de héros" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="missions" src="expansions/missions.png" title="Extension: Aventures" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="demon hunter initiate" src="expansions/demon hunter initiate.png" title="Extension: Chasseur de démons" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="taverns of time" src="expansions/taverns of time.png" title="Extension: Taverne du temps" class="icon-type">
+                <img onclick="move(), getCardExtension(this.id)" id="wild event" src="expansions/wild event.png" title="Extension: Évènements" class="icon-type">
+            </td>
+        </tr>
+    </table>
+    <!--#####################################################################################################-->
+    <!--barre de progression-->
+    <div id="progress_bar">
+        <div id="bar"></div>
+    </div>
+    <!--#####################################################################################################-->
+    <!--audio qui confirme l'exécution de la requête-->
+    <audio controls="controls" id='hearthstone_audio'
+    src="../index/hearthstone-travail-termine.ogg"></audio>  
+    <!--#####################################################################################################-->
+    <!--tableau contenant le résultat du tri-->
+    <table class="table-cards" id="table-split">
+        <tbody id="list_cards">
+            
+        </tbody>
+    </table>
+
+</body>
+
+</html>

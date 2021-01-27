@@ -1,0 +1,203 @@
+/*#########################################################################
+Auteur : Jeremy BROYON#####################################################
+Nom : Hearthstone API######################################################
+Date limite : 07/12/20#####################################################
+Cahier des charges :#######################################################
+  - page d'accueil#########################################################
+  - formulaire de contact via une API######################################
+  - pages fixes générées par l'API#########################################
+  - un tableau et une galerie d'images#####################################
+  - responsivité, sémantique, syntaxe, fonctions supp######################
+#########################################################################*/
+/*#########################################################################*/
+html, body
+{
+    height: 100%;
+}
+
+body
+{
+    background: black;
+    cursor: url(cursor/hearthstone-cursor.png) 10 2, auto;
+    overflow: hidden;
+    color: white;
+}
+body:active
+{
+    cursor: url(cursor/hearthstone-click.png) 10 2, auto;
+}
+/*mise en place d'un background fixe (uniquement pour l'accueil*/
+body:after
+{
+    background-color: black;
+    background-image: url(background/battlefield_bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    content: "";
+    filter: blur(8px);
+    opacity: 0.8;
+    position: absolute;
+    will-change: transform;
+    z-index: -1;
+}
+/*#####################################################################*/
+/*tableau contenant les images de navigations du menu*/
+.table-image
+{
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1%;
+}
+.image-zoom
+{
+    transition: 0.4s;
+    width: 10%;
+}
+.image-zoom:hover 
+{
+    transform: scale(1.05);
+    cursor: url(cursor/hearthstone-cursor.png) 10 2, auto;
+}
+/*#####################################################################*/
+/*formulaire de contact*/
+input[type=text], select, textarea
+{
+    width: 100%;
+    padding: 12px; 
+    border: 3px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background: grey;
+    color: white;
+}
+input[type=submit]
+{
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+input[type=submit]:hover
+{
+    background-color: rgb(1, 102, 1);
+}
+.container
+{
+    border-radius: 5px;
+    background-color: rgb(71, 71, 71);
+    padding: 20px;
+    margin-top: 5%;
+    display: inline-flex;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+/*#####################################################################*/
+/*responsive (gestion de la hauteur de l'index)*/
+@media (max-height: 540px)
+{
+    .image-zoom
+    {
+        width: 17%;
+    }
+     body
+    {
+        background-image: url(background/background_hs.png);
+        background-repeat: repeat;
+        overflow: visible;
+    }
+    .table-image
+    {
+        overflow: visible;
+        width: 100%;
+    }
+}
+@media (max-height: 450px)
+{
+    .image-zoom
+    {
+        width: 16%;
+    }
+}
+@media (max-height: 430px)
+{
+    .image-zoom
+    {
+        width: 14%;
+    }
+}
+@media (max-height: 380px)
+{
+    .image-zoom
+    {
+        width: 13%;
+    }
+}
+@media (max-height: 350px)
+{
+    .image-zoom
+    {
+        width: 12%;
+    }
+}
+@media (max-height: 330px)
+{
+    .image-zoom
+    {
+        width: 10%;
+    }
+}
+/*#####################################################################*/
+/*responsive (gestion de la largeur de l'index)*/
+@media (max-width: 1400px)
+{
+    body
+    {
+        background-image: url(background/background_hs.png);
+        background-repeat: repeat;
+        overflow: visible;
+    }
+    .table-image
+    {
+        overflow: visible;
+        width: 100%;
+    }
+    .image-zoom
+    {
+        width: 25%;
+    }
+}
+@media (max-width: 550px)
+{
+    .image-zoom
+    {
+        width: 32%;
+    }
+}
+@media (max-width: 400px)
+{
+    .image-zoom
+    {
+        width: 48%;
+    }
+}
+@media (max-width: 300px)
+{
+    .image-zoom
+    {
+        width: 100%;
+    }
+}

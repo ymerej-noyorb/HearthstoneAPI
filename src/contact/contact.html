@@ -1,0 +1,54 @@
+<!--#########################################################################
+Auteur : Jeremy BROYON#####################################################
+Nom : Hearthstone API######################################################
+Date limite : 07/12/20#####################################################
+Cahier des charges :#######################################################
+  - page d'accueil#########################################################
+  - formulaire de contact via une API######################################
+  - pages fixes générées par l'API#########################################
+  - un tableau et une galerie d'images#####################################
+  - responsivité, sémantique, syntaxe, fonctions supp######################
+#########################################################################-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../index/index.css">
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script><!--formulaire de contact Formspree-->
+    <link rel="icon" href="/index/hearthstone_api.ico" />
+    <meta charset="utf-8">
+    <title>Hearthstone API - Contact</title>
+</head>
+
+<body>
+    <!--#####################################################################################################-->
+    <!--tableau contenant les images de navigations-->
+    <table class="table-image">
+        <tr>
+            <td>
+                <a href="../index.html"><img src="../index/navbar/retour_hs.png" class="image-zoom"></a>
+            </td>
+        </tr>
+    </table>
+    <div class="container">
+        <form action="https://formspree.io/f/xoqpnenq" method="POST">
+      
+            <label for="fname">Prénom</label>
+            <input type="text" id="fname" name="firstname">
+        
+            <label for="lname">Nom</label>
+            <input type="text" id="lname" name="lastname">
+
+            <label for="email">Adresse e-mail</label>
+            <input type="text" id="email" name="_replyto">
+        
+            <label for="subject">Message</label>
+            <textarea id="subject" name="subject" style="height: 140px;"></textarea>
+        
+            <input type="submit" value="Envoyer" onclick="postContactForm()">
+      
+        </form>
+      </div> 
+</body>
+
+</html>

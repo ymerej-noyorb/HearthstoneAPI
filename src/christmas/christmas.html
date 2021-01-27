@@ -1,0 +1,49 @@
+<!--#########################################################################
+Auteur : Jeremy BROYON#####################################################
+Nom : Hearthstone API######################################################
+Date limite : 07/12/20#####################################################
+Cahier des charges :#######################################################
+  - page d'accueil#########################################################
+  - formulaire de contact via une API######################################
+  - pages fixes générées par l'API#########################################
+  - un tableau et une galerie d'images#####################################
+  - responsivité, sémantique, syntaxe, fonctions supp######################
+#########################################################################-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="christmas.css">
+    <script type="text/javascript" src="christmas.js"></script>
+    <link rel="icon" href="../index/hearthstone_api.ico" />
+    <meta charset="utf-8">
+    <title>Hearthstone API - Easter egg</title>
+</head>
+
+<body>
+    <!--#####################################################################################################-->
+    <!--tableau contenant les images de navigations-->
+    <table class="table-image">
+        <tr>
+            <td>
+                <img src="christmas/info_christmas.png" class="image-zoom">
+                <img src="christmas/info_christmas2.png" class="image-zoom">
+                <a href="../index.html"><img src="christmas/retour.png" class="image-zoom"></a>
+                <img onclick="christmasPlay()" src="christmas/play.png" class="image-zoom">
+                <img onclick="christmasPause()" src="christmas/pause.png" class="image-zoom">
+            </td>
+        </tr>
+    </table>
+    <!--#####################################################################################################-->
+    <!--audio qui confirme l'exécution de la requête-->
+    <audio controls="controls" id='hearthstone_christmas'
+    src="christmas/Hearthstone_jingle_bells.ogg"></audio>
+    <!--#####################################################################################################-->
+    <!--image de l'easter egg-->
+    <div class="card">
+        <img src="christmas/santa_claus.png" class="card-image" draggable="false">
+    </div>
+
+</body>
+
+</html>
