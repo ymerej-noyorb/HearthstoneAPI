@@ -18,7 +18,7 @@ Le cahier des charges comprend :
 - Un formulaire de contact ([Formspree](https://formspree.io/))
 - Responsive web design
 ### Screenshot
-![Image text](https://www.casimages.com/i/210127044501974317.jpg.html)
+![Image text](https://i.imgur.com/6gmJq9A.jpeg)
 ## Technologies
 ***
 Technologies utilisées
