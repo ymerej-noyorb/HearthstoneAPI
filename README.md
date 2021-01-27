@@ -19,6 +19,8 @@ Le cahier des charges comprend :
 - Responsive web design
 ### Screenshot
 ![Image text](https://i.imgur.com/6gmJq9A.jpeg)
+![Image text](https://i.imgur.com/ZInLqtY.png)
+![Image text](https://i.imgur.com/GTyax4D.png)
 ## Technologies
 ***
 Technologies utilisées
